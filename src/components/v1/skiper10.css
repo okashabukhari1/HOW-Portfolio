@@ -1,0 +1,131 @@
+/* ==========================================================================
+   skiper10.css — Double Stairs Preloader (Skiper UI)
+   ========================================================================== */
+
+.skiper10-preloader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  user-select: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Dual Stairs Layers */
+.skiper10-stairs-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  display: flex;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skiper10-stairs-layer.top {
+  top: 0;
+}
+
+.skiper10-stairs-layer.bottom {
+  bottom: 0;
+}
+
+.skiper10-column {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: #0d1117; /* HOW Studio Navy */
+  border-right: 1px solid rgba(48, 54, 61, 0.4);
+}
+
+.skiper10-column:last-child {
+  border-right: none;
+}
+
+/* Center Stage Info & Counter */
+.skiper10-center-stage {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.skiper10-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #79c0ff;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  background: rgba(22, 27, 34, 0.85);
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid #30363d;
+  backdrop-filter: blur(12px);
+}
+
+.skiper10-dot {
+  width: 6px;
+  height: 6px;
+  background: #388bfd;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #388bfd;
+}
+
+.skiper10-digits-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.skiper10-number {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(60px, 9vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #f0f6fc;
+  line-height: 1;
+}
+
+.skiper10-percent {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 600;
+  color: #79c0ff;
+}
+
+.skiper10-progress-bar {
+  width: min(240px, 60vw);
+  height: 3px;
+  background: rgba(48, 54, 61, 0.6);
+  border-radius: 999px;
+  margin-top: 18px;
+  overflow: hidden;
+}
+
+.skiper10-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #388bfd 0%, #79c0ff 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(56, 139, 253, 0.8);
+  transition: width 0.05s linear;
+}
+
+.skiper10-subtext {
+  margin: 14px 0 0 0;
+  font-size: 12px;
+  color: #8b949e;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,150 @@
+.studio-process-section {
+  position: relative;
+  background: #150b28;
+  color: #ffffff;
+  padding: 120px 0 110px;
+  overflow: hidden;
+  border-top: 1px solid rgba(141, 108, 182, 0.2);
+  border-bottom: 1px solid rgba(141, 108, 182, 0.2);
+}
+
+.studio-process-section::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(120, 50, 210, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.process-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-head .studio-eyebrow {
+  color: #c084fc;
+}
+
+.process-head .studio-section-title {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.process-head .studio-section-subtitle {
+  color: #d1c2e8;
+  margin: 0 auto;
+}
+
+.process-steps-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Light Dark Process Card Background */
+.process-step-node {
+  background: #18112d; /* Refined light dark card background */
+  border: 1px solid rgba(221, 219, 255, 0.16);
+  border-radius: 20px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.process-step-node:hover {
+  background: #231940; /* Elevated light dark on hover */
+  border-color: rgba(221, 219, 255, 0.45);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.step-top-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  background: #2f27ce;
+  border: 1px solid #c084fc;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-status-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #c084fc;
+}
+
+.step-phase-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.step-desc-copy {
+  margin: 0 0 24px 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #bfaedc;
+  flex-grow: 1;
+}
+
+.step-deliverable-box {
+  background: rgba(12, 8, 24, 0.6);
+  border: 1px solid rgba(221, 219, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.deliverable-label {
+  display: block;
+  font-weight: 700;
+  color: #c084fc;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.deliverable-val {
+  color: #e5dcf4;
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .process-steps-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .process-steps-track {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,226 @@
+.studio-capabilities-section {
+  position: relative;
+  background: #ffffff;
+  color: var(--hero-ink);
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+.studio-container {
+  width: min(1280px, 92vw);
+  margin: 0 auto;
+}
+
+.studio-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--hero-muted);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.studio-eyebrow-accent {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #c084fc;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.capabilities-header-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.capabilities-hero-title {
+  margin: 0;
+  font-size: clamp(46px, 5.2vw, 84px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-purple-highlight {
+  color: var(--hero-purple);
+}
+
+.capabilities-lead-text {
+  font-size: clamp(17px, 1.35vw, 21px);
+  line-height: 1.5;
+  color: #4b3d60;
+  margin: 0 0 36px 0;
+  font-weight: 400;
+}
+
+.capabilities-lead-wrap {
+  margin-bottom: 36px;
+}
+
+.capabilities-lead-wrap .skiper72-paragraph {
+  font-size: clamp(17px, 1.35vw, 21px);
+  color: #4b3d60;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.capabilities-lead-wrap .skiper72-highlight {
+  color: #8a2be2 !important;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+.capabilities-steps-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f3fd;
+  border: 1px solid rgba(74, 29, 136, 0.12);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hero-ink);
+  transition: all 0.25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--hero-purple);
+  box-shadow: 0 6px 20px rgba(74, 29, 136, 0.08);
+}
+
+.step-card.highlight {
+  background: rgba(74, 29, 136, 0.08);
+  border-color: rgba(74, 29, 136, 0.3);
+  color: var(--hero-purple);
+}
+
+.step-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--hero-purple);
+}
+
+.step-connector {
+  color: var(--hero-muted);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.philosophy-glass-banner {
+  background: linear-gradient(135deg, #1b0e33 0%, #251246 100%);
+  border-radius: 28px;
+  padding: clamp(36px, 4vw, 56px);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(33, 16, 61, 0.2);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.philosophy-glass-banner::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(120, 50, 210, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.philosophy-content-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+.philosophy-heading {
+  margin: 0 0 16px 0;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.philosophy-motto {
+  font-size: 17px;
+  line-height: 1.55;
+  color: #d8c8f3;
+  margin: 0;
+  font-style: italic;
+}
+
+.philosophy-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.philosophy-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: all 0.25s ease;
+}
+
+.philosophy-pillar:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(192, 132, 252, 0.4);
+  transform: translateX(4px);
+}
+
+.pillar-num {
+  font-size: 14px;
+  font-weight: 800;
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.pillar-title {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.pillar-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #baa8d4;
+}
+
+@media (max-width: 960px) {
+  .capabilities-header-grid,
+  .philosophy-content-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

@@ -1,0 +1,193 @@
+/* Expand Cards Section — Powered by Skiper52 */
+.home-expand-cards-section {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #fbfbfe 0%, #eeedff 100%);
+  padding: 80px 0 100px;
+  overflow: hidden;
+  border-top: 1px solid rgba(47, 39, 206, 0.12);
+  border-bottom: 1px solid rgba(47, 39, 206, 0.16);
+}
+
+.expand-cards-header-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 36px;
+}
+
+.expand-cards-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.expand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #dddbff;
+  border: 1px solid rgba(47, 39, 206, 0.2);
+  color: #2f27ce;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.expand-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #443dff;
+  box-shadow: 0 0 10px rgba(68, 61, 255, 0.45);
+  animation: expandPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes expandPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.expand-title {
+  margin: 0 0 8px 0;
+  font-size: clamp(30px, 3.8vw, 50px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #040316;
+}
+
+.expand-subtitle {
+  font-size: 15px;
+  color: #565371;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.expand-controls-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(47, 39, 206, 0.14);
+  font-size: 13px;
+  color: #403d63;
+}
+
+.expand-cards-body {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.expand-cards-footer-bar {
+  max-width: 1400px;
+  margin: 28px auto 0;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.expand-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2f27ce;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.expand-explore-link:hover {
+  color: #443dff;
+  transform: translateX(4px);
+}
+
+/* Studio Philosophy / Manifesto Section */
+.home-manifesto-section {
+  position: relative;
+  background: #090a0f;
+  padding: 100px 0 90px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.manifesto-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #79c0ff;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.manifesto-dot {
+  width: 7px;
+  height: 7px;
+  background: #388bfd;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #388bfd;
+}
+
+/* Kinetic manifesto quote section */
+.home-kinetic-quote-section {
+  position: relative;
+  background: #090a0f;
+  padding: 100px 0 100px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Ensure bright, clear contrast for skiper72 text on dark backgrounds */
+.home-manifesto-section .skiper72-paragraph,
+.home-kinetic-quote-section .skiper72-paragraph {
+  color: #f0f6fc;
+}
+
+.home-manifesto-section .skiper72-word,
+.home-kinetic-quote-section .skiper72-word {
+  color: #f0f6fc;
+}
+
+.home-manifesto-section .skiper72-highlight,
+.home-kinetic-quote-section .skiper72-highlight {
+  color: #79c0ff !important;
+  text-shadow: 0 0 20px rgba(121, 192, 255, 0.5);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .home-manifesto-section {
+    padding: 60px 0 60px;
+  }
+
+  .home-expand-cards-section {
+    padding: 50px 0 70px;
+  }
+  
+  .expand-cards-header-wrap,
+  .expand-cards-body,
+  .expand-cards-footer-bar {
+    padding: 0 20px;
+  }
+
+  .home-kinetic-quote-section {
+    padding: 60px 0 60px;
+  }
+}

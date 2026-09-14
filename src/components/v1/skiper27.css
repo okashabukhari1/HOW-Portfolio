@@ -1,0 +1,58 @@
+/* Skiper27 — Rolling Text CSS */
+.skiper27-rolling-container {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.skiper27-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skiper27-chars-track {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.skiper27-char-box {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  height: 1.15em;
+  line-height: 1.15em;
+}
+
+.skiper27-char-primary {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  will-change: transform, opacity;
+}
+
+.skiper27-char-secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.skiper27-space {
+  display: inline-block;
+  width: 0.28em;
+}

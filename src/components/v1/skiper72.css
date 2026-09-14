@@ -1,0 +1,38 @@
+/* Skiper72 — SkiperTextRevealH CSS */
+.skiper72-container {
+  position: relative;
+  width: 100%;
+}
+
+.skiper72-paragraph {
+  font-size: clamp(24px, 3.8vw, 48px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  color: #f0f6fc;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.28em;
+  row-gap: 0.1em;
+}
+
+.skiper72-word-wrap {
+  display: inline-block;
+  overflow: visible;
+  perspective: 600px;
+}
+
+.skiper72-word {
+  display: inline-block;
+  transform-origin: left bottom;
+  will-change: transform, opacity, filter;
+  transition: color 0.3s ease;
+}
+
+.skiper72-highlight {
+  color: #79c0ff !important;
+  text-shadow: 0 0 24px rgba(121, 192, 255, 0.45);
+  font-weight: 600;
+}

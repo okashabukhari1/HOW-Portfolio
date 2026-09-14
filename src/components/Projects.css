@@ -1,0 +1,230 @@
+.studio-projects-section {
+  position: relative;
+  background: #ffffff;
+  color: var(--hero-ink);
+  padding: 120px 0 110px;
+}
+
+.projects-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 54px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.project-filter-tabs {
+  display: flex;
+  background: #f7f3fd;
+  border: 1px solid rgba(74, 29, 136, 0.1);
+  padding: 6px;
+  border-radius: 999px;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #644f80;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab-btn:hover {
+  color: var(--hero-purple);
+}
+
+.filter-tab-btn.active {
+  background: #ffffff;
+  color: var(--hero-purple);
+  box-shadow: 0 4px 12px rgba(74, 29, 136, 0.12);
+}
+
+.projects-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.project-showcase-card {
+  background: #ffffff;
+  border: 1px solid rgba(74, 29, 136, 0.12);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 24px rgba(74, 29, 136, 0.04);
+}
+
+.project-showcase-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 29, 136, 0.35);
+  box-shadow: 0 24px 50px rgba(74, 29, 136, 0.14);
+}
+
+.project-media-stage {
+  position: relative;
+  background: #f3ecfb;
+  height: 240px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.project-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(33, 16, 61, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  z-index: 2;
+  letter-spacing: 0.06em;
+}
+
+.project-stage-img {
+  width: 90%;
+  height: 85%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-showcase-card:hover .project-stage-img {
+  transform: scale(1.05);
+}
+
+.project-stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(74, 29, 136, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-showcase-card:hover .project-stage-overlay {
+  opacity: 1;
+}
+
+.stage-overlay-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.project-card-body {
+  padding: 28px 26px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-category-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--hero-purple);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.project-headline-title {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--hero-ink);
+}
+
+.project-summary-copy {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #55446a;
+  flex-grow: 1;
+}
+
+.project-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-badge-chip {
+  font-size: 11px;
+  font-weight: 600;
+  background: #f7f3fd;
+  color: #644983;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid rgba(74, 29, 136, 0.08);
+}
+
+.project-card-bottom {
+  padding: 16px 26px 24px;
+  border-top: 1px solid rgba(74, 29, 136, 0.08);
+}
+
+.btn-case-study {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(74, 29, 136, 0.2);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hero-purple);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-case-study:hover {
+  background: var(--hero-purple);
+  color: #ffffff;
+  border-color: var(--hero-purple);
+}
+
+.btn-case-study:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .projects-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .projects-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,99 @@
+.studio-tech-ticker {
+  position: relative;
+  background: #2f27ce;
+  border-top: 1px solid rgba(221, 219, 255, 0.5);
+  border-bottom: 1px solid rgba(221, 219, 255, 0.5);
+  padding: 16px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+
+.tech-ticker-label {
+  padding: 0 28px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #fbfbfe;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-right: 1px solid rgba(221, 219, 255, 0.45);
+  z-index: 2;
+  background: #2f27ce;
+}
+
+.ticker-pulse {
+  width: 6px;
+  height: 6px;
+  background: #dddbff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #dddbff;
+}
+
+.tech-ticker-track {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.tech-ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.tech-ticker-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 251, 254, 0.12);
+  border: 1px solid rgba(221, 219, 255, 0.36);
+  border-radius: 999px;
+  padding: 7px 16px;
+  color: #fbfbfe;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  background: #443dff;
+  border-color: #dddbff;
+  color: #ffffff;
+}
+
+.tech-dot {
+  width: 5px;
+  height: 5px;
+  background: #dddbff;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .tech-ticker-label {
+    display: none;
+  }
+}

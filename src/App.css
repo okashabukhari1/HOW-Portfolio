@@ -1,0 +1,171 @@
+.studio-app-root {
+  /* H.O.W. brand palette */
+  --site-text: #040316;
+  --site-background: #fbfbfe;
+  --site-primary: #2f27ce;
+  --site-secondary: #dddbff;
+  --site-accent: #443dff;
+  --hero-ink: var(--site-text);
+  --hero-muted: #575477;
+  --hero-paper: var(--site-secondary);
+  --hero-purple: var(--site-primary);
+  --hero-purple-hover: var(--site-accent);
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--site-background);
+  color: var(--site-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The home hero deliberately retains its original visual treatment. */
+.originkit-hero-40 {
+  --hero-ink: #21103d;
+  --hero-muted: #765f99;
+  --hero-paper: #eee7fb;
+  --hero-purple: #4a1d88;
+  --hero-purple-hover: #632bb0;
+}
+
+/* Shared palette overrides for the existing page modules. */
+.studio-capabilities-section,
+.studio-projects-section,
+.studio-team-section,
+.studio-services-section,
+.studio-values-section,
+.studio-contact-section { background: var(--site-background); }
+
+.studio-services-section,
+.studio-values-section,
+.studio-contact-section { background: linear-gradient(180deg, #f4f3ff 0%, var(--site-background) 100%); }
+
+.service-awwwards-card,
+.project-showcase-card,
+.team-profile-card,
+.contact-hub-card,
+.value-benefit-card { background: #fff; border-color: rgba(47, 39, 206, .14); }
+
+.service-awwwards-card { background: linear-gradient(145deg, #fff 0%, #f2f1ff 100%); border-color: rgba(47, 39, 206, .16); }
+
+.studio-section-title,
+.service-title,
+.project-headline-title,
+.team-founder-name,
+.hub-card-title,
+.value-card-title,
+.capabilities-hero-title { color: var(--site-text); }
+
+.philosophy-glass-banner { background: linear-gradient(135deg, var(--site-primary), var(--site-accent)); border-color: rgba(221, 219, 255, .48); }
+.philosophy-glass-banner::before { background: radial-gradient(circle, rgba(221, 219, 255, .28), transparent 70%); }
+
+.service-awwwards-card:hover,
+.project-showcase-card:hover,
+.team-profile-card:hover,
+.contact-hub-card:hover,
+.value-benefit-card:hover { border-color: rgba(47, 39, 206, .42); box-shadow: 0 20px 48px rgba(47, 39, 206, .13); }
+
+.studio-section-subtitle,
+.service-description,
+.project-summary-copy,
+.team-founder-bio,
+.hub-card-desc,
+.value-card-desc,
+.capabilities-lead-text,
+.capabilities-lead-wrap .skiper72-paragraph { color: #565371; }
+
+.service-chip,
+.tech-badge-chip,
+.step-card,
+.social-icon-btn,
+.project-filter-tabs,
+.call-booking-box { background: var(--site-secondary); border-color: rgba(47, 39, 206, .12); }
+
+.project-filter-tabs { box-shadow: inset 0 0 0 1px rgba(47, 39, 206, .04); }
+.filter-tab-btn.active { color: var(--site-primary); box-shadow: 0 6px 18px rgba(47, 39, 206, .16); }
+.filter-tab-btn:hover,
+.project-category-tag,
+.team-founder-role,
+.social-icon-btn,
+.service-action-link,
+.btn-case-study { color: var(--site-primary); }
+.btn-case-study { border-color: rgba(47, 39, 206, .28); }
+.btn-case-study:hover,
+.email-card-btn:hover { background: var(--site-primary); border-color: var(--site-primary); }
+
+.service-num-badge,
+.service-arrow-cue,
+.service-icon-glyph,
+.value-num-index,
+.hub-icon-wrap.purple-theme,
+.step-card.highlight { background: rgba(47, 39, 206, .09); }
+
+.service-awwwards-card::before,
+.team-avatar-circle { background: linear-gradient(90deg, var(--site-primary), var(--site-accent)); }
+
+.project-media-stage { background: var(--site-secondary); }
+.project-stage-overlay { background: rgba(47, 39, 206, .64); }
+
+/* Navigation carries the same brand colours across every route. */
+.integrated-brand,
+.integrated-capsule,
+.integrated-mobile-capsule { background: rgba(251, 251, 254, .9); border-color: rgba(47, 39, 206, .16); }
+.integrated-brand:hover { background: #fff; }
+.integrated-brand,
+.integrated-logo-icon,
+.integrated-brand-text,
+.capsule-item,
+.bar-line { color: var(--site-text); }
+.bar-line,
+.capsule-item.is-active::after { background: var(--site-primary); }
+.capsule-item:hover,
+.capsule-item.is-active { color: var(--site-primary); }
+.capsule-cta-btn,
+.mobile-capsule-btn,
+.drawer-cta-primary { background: var(--site-primary); }
+.capsule-cta-btn:hover,
+.drawer-cta-primary:hover { background: var(--site-accent); }
+.integrated-mobile-drawer { background: rgba(47, 39, 206, .98); }
+.drawer-email-link { color: var(--site-secondary); }
+
+.studio-main-footer,
+.studio-process-section,
+.studio-tech-marquee { background: var(--site-primary); border-color: rgba(221, 219, 255, .38); }
+.studio-main-footer::before,
+.studio-process-section::before { background: radial-gradient(ellipse at top, rgba(221, 219, 255, .28), transparent 70%); }
+.footer-pre-banner { background: rgba(4, 3, 22, .14); border-color: rgba(221, 219, 255, .48); }
+.pre-banner-tag,
+.footer-brand-subtitle,
+.footer-soc-link,
+.chat-founder-num,
+.studio-tech-marquee .marquee-label { color: var(--site-secondary); }
+.brand-dot-purple,
+.studio-tech-marquee .marquee-dot { background: var(--site-secondary); box-shadow: 0 0 10px var(--site-secondary); }
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--hero-purple);
+  color: #ffffff;
+}
