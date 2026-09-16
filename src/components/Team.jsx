@@ -1,18 +1,13 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Check, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, WhatsappIcon, EmailIcon } from './SocialIcons';
 import { teamData } from '../data/studioData';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
-import { animateStaggerCards } from '../utils/animeAnimations';
 import './Team.css';
 
 export default function Team() {
   const sectionRef = useRef(null);
   useScrollAnimation(sectionRef);
-
-  useEffect(() => {
-    animateStaggerCards('.team-profile-card');
-  }, []);
 
   return (
     <section className="studio-team-section" id="team" ref={sectionRef}>

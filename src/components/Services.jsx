@@ -1,9 +1,8 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Globe, ShoppingBag, Palette, Cpu, Gauge } from 'lucide-react';
+import { ArrowRight, Layers, Globe, ShoppingBag, Palette, Cpu, Gauge, ShieldCheck } from 'lucide-react';
 import { servicesData } from '../data/studioData';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
-import { animateStaggerCards } from '../utils/animeAnimations';
 import './Services.css';
 
 const serviceIcons = [
@@ -12,16 +11,13 @@ const serviceIcons = [
   <ShoppingBag size={22} />,
   <Palette size={22} />,
   <Cpu size={22} />,
-  <Gauge size={22} />
+  <Gauge size={22} />,
+  <ShieldCheck size={22} />
 ];
 
 export default function Services({ limit }) {
   const sectionRef = useRef(null);
   useScrollAnimation(sectionRef);
-
-  useEffect(() => {
-    animateStaggerCards('.service-awwwards-card');
-  }, []);
 
   const displayServices = limit ? servicesData.slice(0, limit) : servicesData;
 
@@ -53,6 +49,13 @@ export default function Services({ limit }) {
               
               <h3 className="service-title">{svc.title}</h3>
               <p className="service-description">{svc.desc}</p>
+
+              {svc.price && (
+                <div className="service-price-row">
+                  <strong>{svc.price}</strong>
+                  <span>{svc.priceNote}</span>
+                </div>
+              )}
 
               <div className="service-tag-cloud">
                 {svc.tags.map((tag) => (

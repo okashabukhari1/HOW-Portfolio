@@ -1,16 +1,10 @@
-import { useEffect } from 'react';
 import Services from '../components/Services';
 import Process from '../components/Process';
 import TechMarquee from '../components/TechMarquee';
 import PageHero from '../components/PageHero';
-import { animatePageEntry } from '../utils/animeAnimations';
 import './PageBanner.css';
 
 export default function ServicesPage() {
-  useEffect(() => {
-    animatePageEntry('.studio-page-header');
-  }, []);
-
   return (
     <div className="page-services">
       <PageHero

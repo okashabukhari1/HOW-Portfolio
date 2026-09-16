@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -50,11 +50,10 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor="#eab308" />
-              <stop offset="25%" stopColor="#ef4444" />
-              <stop offset="50%" stopColor="#80eeb4" />
-              <stop offset="75%" stopColor="#06b6d4" />
-              <stop offset="100%" stopColor="#8b5cf6" />
+              <stop offset="0%" stopColor="#dddbff" />
+              <stop offset="38%" stopColor="#8b86ff" />
+              <stop offset="72%" stopColor="#443dff" />
+              <stop offset="100%" stopColor="#2f27ce" />
             </>
           )}
         </linearGradient>
@@ -134,7 +133,7 @@ export const FooterBackgroundGradient = () => {
       className="absolute inset-0 z-0 footer-background-gradient"
       style={{
         background:
-          "radial-gradient(125% 125% at 50% 10%, #0F0F1166 50%, #3ca2fa33 100%)",
+          "radial-gradient(125% 125% at 50% 10%, #04031666 50%, #443dff33 100%)",
       }}
     />
   );

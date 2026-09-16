@@ -114,10 +114,12 @@
 
 @media (max-width: 768px) {
   .studio-page-header {
-    padding: 140px 0 70px;
+    padding: 124px 0 64px;
   }
 
-  .page-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .page-hero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .page-header-title { font-size: clamp(40px, 13vw, 58px); }
+  .page-header-desc { font-size: 15px; line-height: 1.6; }
   .page-hero-signature { min-height: auto; padding: 18px 0 0 18px; }
   .page-hero-index { font-size: 54px; }
   .page-hero-signature p { max-width: 320px; }

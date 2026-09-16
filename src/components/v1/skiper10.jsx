@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./skiper10.css";
 
@@ -6,22 +6,25 @@ const NB_COLUMNS = 6;
 
 export function Preloader_004({ onComplete }) {
   const [progress, setProgress] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion) {
+      onComplete?.();
+      return;
+    }
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          if (onComplete) {
-            setTimeout(onComplete, 300);
-          }
+          if (onComplete) setTimeout(onComplete, 150);
           return 100;
         }
-        return prev + 2;
+        return Math.min(prev + 4, 100);
       });
-    }, 20);
+    }, 14);
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, [onComplete, reduceMotion]);
 
   // Dual stairs animation variants
   const stairTopVariants = {
@@ -31,8 +34,8 @@ export function Preloader_004({ onComplete }) {
     exit: (i) => ({
       top: "-100%",
       transition: {
-        duration: 0.75,
-        delay: 0.04 * (NB_COLUMNS - 1 - i),
+        duration: 0.55,
+        delay: 0.025 * (NB_COLUMNS - 1 - i),
         ease: [0.76, 0, 0.24, 1],
       },
     }),
@@ -45,8 +48,8 @@ export function Preloader_004({ onComplete }) {
     exit: (i) => ({
       bottom: "-100%",
       transition: {
-        duration: 0.75,
-        delay: 0.04 * i,
+        duration: 0.55,
+        delay: 0.025 * i,
         ease: [0.76, 0, 0.24, 1],
       },
     }),
@@ -58,7 +61,7 @@ export function Preloader_004({ onComplete }) {
       initial={{ opacity: 1 }}
       exit={{
         opacity: 0,
-        transition: { delay: 0.65, duration: 0.3 },
+        transition: { delay: 0.42, duration: 0.2 },
       }}
     >
       {/* Center Brand Identity & Progress Counter */}

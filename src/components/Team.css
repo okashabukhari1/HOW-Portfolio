@@ -167,8 +167,19 @@
 
 @media (max-width: 1024px) {
   .team-cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 900px;
     margin: 0 auto;
   }
+
+  .team-profile-card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 430px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .team-cards-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .team-profile-card:last-child { grid-column: auto; width: 100%; }
 }

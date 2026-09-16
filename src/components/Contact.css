@@ -17,15 +17,16 @@
 
 .contact-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: 1fr;
+  width: min(100%, 860px);
+  margin: 0 auto;
 }
 
 .contact-hub-card {
   background: #ffffff;
   border: 1px solid rgba(74, 29, 136, 0.12);
   border-radius: 24px;
-  padding: 36px 30px;
+  padding: clamp(30px, 5vw, 52px);
   display: flex;
   flex-direction: column;
   box-shadow: 0 6px 24px rgba(74, 29, 136, 0.04);
@@ -62,18 +63,6 @@
   background: rgba(16, 185, 129, 0.12);
   color: #059669;
   border: 1px solid rgba(16, 185, 129, 0.25);
-}
-
-.hub-icon-wrap.purple-theme {
-  background: rgba(74, 29, 136, 0.08);
-  color: var(--hero-purple);
-  border: 1px solid rgba(74, 29, 136, 0.16);
-}
-
-.hub-icon-wrap.blue-theme {
-  background: rgba(59, 130, 246, 0.1);
-  color: #2563eb;
-  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .hub-card-tag {
@@ -166,148 +155,7 @@
   color: #ffffff;
 }
 
-.email-action-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.email-card-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fdfcff;
-  border: 1px solid rgba(74, 29, 136, 0.1);
-  padding: 14px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: var(--hero-ink);
-  transition: all 0.25s ease;
-}
-
-.email-card-btn:hover {
-  background: var(--hero-purple);
-  color: #ffffff;
-  border-color: var(--hero-purple);
-  transform: translateX(4px);
-}
-
-.email-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.email-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--hero-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.email-card-btn:hover .email-label {
-  color: #eee7fb;
-}
-
-.email-address {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--hero-ink);
-}
-
-.email-card-btn:hover .email-address {
-  color: #ffffff;
-}
-
-.hub-guarantee-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #6d5b88;
-  border-top: 1px solid rgba(74, 29, 136, 0.08);
-  padding-top: 18px;
-}
-
-.note-icon {
-  color: var(--hero-purple);
-}
-
-.location-specs-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.spec-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  color: #4b3962;
-}
-
-.spec-icon {
-  color: var(--hero-purple);
-}
-
-.call-booking-box {
-  background: #f8f4fe;
-  border: 1px solid rgba(74, 29, 136, 0.12);
-  border-radius: 16px;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.booking-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.booking-icon {
-  color: var(--hero-purple);
-}
-
-.booking-title {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--hero-ink);
-}
-
-.booking-sub {
-  font-size: 11.5px;
-  color: #73618d;
-}
-
-.btn-book-call {
-  background: var(--hero-purple);
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.btn-book-call:hover {
-  background: var(--hero-purple-hover);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 1024px) {
-  .contact-cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 540px;
-    margin: 0 auto;
-  }
+@media (max-width: 640px) {
+  .founder-whatsapp-item { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .founder-action-badge { justify-content: space-between; width: 100%; }
 }

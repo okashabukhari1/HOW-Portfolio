@@ -37,8 +37,8 @@
 
 .services-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .service-awwwards-card {
@@ -127,6 +127,21 @@
   color: #55446a;
   flex-grow: 1;
 }
+
+.service-price-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -6px 0 22px;
+  padding: 13px 14px;
+  background: #040316;
+  border-radius: 12px;
+  color: #fbfbfe;
+}
+
+.service-price-row strong { font-size: 15px; letter-spacing: -0.02em; }
+.service-price-row span { color: #dddbff; font-size: 10px; line-height: 1.3; text-align: right; }
 
 .service-tag-cloud {
   display: flex;

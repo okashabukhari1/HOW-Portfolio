@@ -1,21 +1,53 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { projectsData } from '../data/studioData';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
-import { animateStaggerCards } from '../utils/animeAnimations';
 import './Projects.css';
 
 const categories = ["All", "Platforms", "Web Applications", "Games & Discovery"];
+
+export function ProjectCard({ project, className = '' }) {
+  return (
+    <article className={`project-showcase-card reveal-stagger-item ${className}`.trim()}>
+      <Link to={`/work/${project.id}`} className="project-card-link" aria-label={`View ${project.title} case study`}>
+        <div className="project-media-stage">
+          <img
+            src={project.showcaseImage || project.heroImage}
+            alt={`${project.title} project preview`}
+            className="project-stage-img"
+            loading="lazy"
+          />
+          <div className="project-media-topline">
+            <span className="project-card-badge">{project.num}</span>
+            <span className="project-card-type">{project.categoryFilter}</span>
+          </div>
+          <span className="project-open-cue" aria-hidden="true"><ArrowUpRight size={20} /></span>
+        </div>
+
+        <div className="project-card-body">
+          <span className="project-category-tag">{project.category}</span>
+          <h3 className="project-headline-title">{project.title}</h3>
+          <p className="project-summary-copy">{project.tagline}</p>
+
+          <div className="project-card-bottom">
+            <div className="project-chips-row" aria-label="Technologies used">
+              {project.technology.slice(0, 3).map((tech) => (
+                <span key={tech} className="tech-badge-chip">{tech}</span>
+              ))}
+            </div>
+            <span className="btn-case-study">View case study <ArrowUpRight size={15} /></span>
+          </div>
+        </div>
+      </Link>
+    </article>
+  );
+}
 
 export default function Projects({ limit }) {
   const [activeFilter, setActiveFilter] = useState("All");
   const sectionRef = useRef(null);
   useScrollAnimation(sectionRef);
-
-  useEffect(() => {
-    animateStaggerCards('.project-showcase-card');
-  }, [activeFilter]);
 
   const projectsList = Object.values(projectsData);
   const filteredProjects = activeFilter === "All"
@@ -52,50 +84,7 @@ export default function Projects({ limit }) {
         {/* Product Cards Grid */}
         <div className="projects-showcase-grid reveal-stagger-group">
           {displayProjects.map((proj) => (
-            <article key={proj.id} className="project-showcase-card reveal-stagger-item">
-              
-              {/* Media Visual Container */}
-              <Link
-                to={`/work/${proj.id}`}
-                className="project-media-stage"
-              >
-                <div className="project-card-badge">{proj.num}</div>
-                <img 
-                  src={proj.heroImage} 
-                  alt={proj.title} 
-                  className="project-stage-img"
-                  loading="lazy"
-                />
-                <div className="project-stage-overlay">
-                  <span className="stage-overlay-text">
-                    <span>Explore Case Study</span>
-                    <ArrowUpRight size={15} />
-                  </span>
-                </div>
-              </Link>
-
-              {/* Card Body */}
-              <div className="project-card-body">
-                <span className="project-category-tag">{proj.category}</span>
-                <h3 className="project-headline-title">{proj.title}</h3>
-                <p className="project-summary-copy">{proj.tagline}</p>
-
-                <div className="project-chips-row">
-                  {proj.technology.map((tech) => (
-                    <span key={tech} className="tech-badge-chip">{tech}</span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Card Footer CTA */}
-              <div className="project-card-bottom">
-                <Link className="btn-case-study" to={`/work/${proj.id}`}>
-                  <span>View Case Study</span>
-                  <ArrowRight size={15} className="btn-arrow" />
-                </Link>
-              </div>
-
-            </article>
+            <ProjectCard key={proj.id} project={proj} />
           ))}
         </div>
 

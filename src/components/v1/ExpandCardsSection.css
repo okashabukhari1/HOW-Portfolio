@@ -79,7 +79,11 @@
   border: 1px solid rgba(47, 39, 206, 0.14);
   font-size: 13px;
   color: #403d63;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
+
+.expand-controls-hint:hover { border-color: rgba(47, 39, 206, 0.34); color: #2f27ce; transform: translateY(-2px); }
 
 .expand-cards-body {
   max-width: 1440px;
@@ -117,7 +121,7 @@
 /* Studio Philosophy / Manifesto Section */
 .home-manifesto-section {
   position: relative;
-  background: #090a0f;
+  background: #040316;
   padding: 100px 0 90px;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -132,7 +136,7 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: #79c0ff;
+  color: #dddbff;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -140,15 +144,15 @@
 .manifesto-dot {
   width: 7px;
   height: 7px;
-  background: #388bfd;
+  background: #443dff;
   border-radius: 50%;
-  box-shadow: 0 0 10px #388bfd;
+  box-shadow: 0 0 10px rgba(68, 61, 255, 0.8);
 }
 
 /* Kinetic manifesto quote section */
 .home-kinetic-quote-section {
   position: relative;
-  background: #090a0f;
+  background: #040316;
   padding: 100px 0 100px;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -167,8 +171,8 @@
 
 .home-manifesto-section .skiper72-highlight,
 .home-kinetic-quote-section .skiper72-highlight {
-  color: #79c0ff !important;
-  text-shadow: 0 0 20px rgba(121, 192, 255, 0.5);
+  color: #dddbff !important;
+  text-shadow: 0 0 20px rgba(68, 61, 255, 0.5);
   font-weight: 700;
 }
 
@@ -178,14 +182,21 @@
   }
 
   .home-expand-cards-section {
-    padding: 50px 0 70px;
+    padding: 64px 0 58px;
   }
   
   .expand-cards-header-wrap,
   .expand-cards-body,
   .expand-cards-footer-bar {
-    padding: 0 20px;
+    padding-inline: 18px;
   }
+
+  .expand-cards-header-wrap { padding-bottom: 28px; }
+  .expand-cards-head { align-items: flex-start; gap: 18px; }
+  .expand-title { font-size: clamp(34px, 11vw, 46px); line-height: 1; }
+  .expand-subtitle { font-size: 14px; }
+  .expand-controls-hint { font-size: 12px; }
+  .expand-cards-footer-bar { margin-top: 22px; gap: 12px; }
 
   .home-kinetic-quote-section {
     padding: 60px 0 60px;

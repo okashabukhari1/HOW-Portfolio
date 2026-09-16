@@ -157,8 +157,10 @@ export const servicesData = [
   {
     num: "01",
     title: "Website Development",
-    desc: "Modern, responsive and high-converting websites engineered to communicate clearly, load instantly, and elevate your brand image.",
-    tags: ["High Performance", "SEO Ready", "Responsive", "Headless CMS"]
+    desc: "Modern, responsive and high-converting websites engineered to communicate clearly, load instantly, and elevate your brand image. Final pricing depends on scope, pages and functionality.",
+    tags: ["High Performance", "SEO Ready", "Responsive", "Headless CMS"],
+    price: "From PKR 15,000",
+    priceNote: "Based on project scope"
   },
   {
     num: "02",
@@ -189,6 +191,14 @@ export const servicesData = [
     title: "Website Optimization",
     desc: "Core Web Vitals tuning, performance profiling, responsive accessibility audits, and speed optimizations that drive engagement.",
     tags: ["Core Web Vitals", "Speed Audits", "Accessibility", "Conversion Tuning"]
+  },
+  {
+    num: "07",
+    title: "Website Cybersecurity Test",
+    desc: "A focused security assessment performed after your website is built, covering common vulnerabilities, exposed configurations and practical hardening recommendations.",
+    tags: ["Vulnerability Scan", "OWASP Checks", "Security Report", "Hardening Advice"],
+    price: "Approx. PKR 8,000",
+    priceNote: "Separate post-build service"
   }
 ];
 

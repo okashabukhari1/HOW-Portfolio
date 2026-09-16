@@ -38,8 +38,8 @@
   position: relative;
   flex: 1;
   height: 100%;
-  background: #0d1117; /* HOW Studio Navy */
-  border-right: 1px solid rgba(48, 54, 61, 0.4);
+  background: #080622;
+  border-right: 1px solid rgba(221, 219, 255, 0.1);
 }
 
 .skiper10-column:last-child {
@@ -66,22 +66,22 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: #79c0ff;
+  color: #dddbff;
   text-transform: uppercase;
   margin-bottom: 12px;
-  background: rgba(22, 27, 34, 0.85);
+  background: rgba(47, 39, 206, 0.18);
   padding: 5px 14px;
   border-radius: 999px;
-  border: 1px solid #30363d;
+  border: 1px solid rgba(221, 219, 255, 0.24);
   backdrop-filter: blur(12px);
 }
 
 .skiper10-dot {
   width: 6px;
   height: 6px;
-  background: #388bfd;
+  background: #443dff;
   border-radius: 50%;
-  box-shadow: 0 0 8px #388bfd;
+  box-shadow: 0 0 8px #443dff;
 }
 
 .skiper10-digits-row {
@@ -103,13 +103,13 @@
 .skiper10-percent {
   font-size: clamp(24px, 3.5vw, 36px);
   font-weight: 600;
-  color: #79c0ff;
+  color: #dddbff;
 }
 
 .skiper10-progress-bar {
   width: min(240px, 60vw);
   height: 3px;
-  background: rgba(48, 54, 61, 0.6);
+  background: rgba(221, 219, 255, 0.14);
   border-radius: 999px;
   margin-top: 18px;
   overflow: hidden;
@@ -117,15 +117,15 @@
 
 .skiper10-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #388bfd 0%, #79c0ff 100%);
+  background: linear-gradient(90deg, #443dff 0%, #dddbff 100%);
   border-radius: 999px;
-  box-shadow: 0 0 12px rgba(56, 139, 253, 0.8);
+  box-shadow: 0 0 12px rgba(68, 61, 255, 0.7);
   transition: width 0.05s linear;
 }
 
 .skiper10-subtext {
   margin: 14px 0 0 0;
   font-size: 12px;
-  color: #8b949e;
+  color: rgba(221, 219, 255, 0.68);
   letter-spacing: 0.05em;
 }

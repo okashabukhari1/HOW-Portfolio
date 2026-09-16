@@ -1,13 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
-import { CustomEase } from "gsap/CustomEase";
 import "./Navbar.css";
-
-// Register GSAP Plugins safely
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(CustomEase);
-}
 
 export function Component() {
   // We need a ref for the parent container to scope GSAP
@@ -15,38 +9,35 @@ export function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Scroll to top and close menu when route changes
+  // Keep route changes anchored at the top. Menu links close themselves.
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsMenuOpen(false);
   }, [location.pathname]);
 
   // Lock body scroll when menu is active
   useEffect(() => {
+    const pageMain = document.querySelector('.studio-app-root main');
+    const pageFooter = document.querySelector('.studio-main-footer');
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
+      if (pageMain) pageMain.inert = true;
+      if (pageFooter) pageFooter.inert = true;
     } else {
       document.body.style.overflow = "";
+      if (pageMain) pageMain.inert = false;
+      if (pageFooter) pageFooter.inert = false;
     }
     return () => {
       document.body.style.overflow = "";
+      if (pageMain) pageMain.inert = false;
+      if (pageFooter) pageFooter.inert = false;
     };
   }, [isMenuOpen]);
 
   // Initial Setup & Hover Effects
   useEffect(() => {
     if (!containerRef.current) return;
-
-    // Create custom easing
-    try {
-      if (!gsap.parseEase("main")) {
-        CustomEase.create("main", "0.65, 0.01, 0.05, 0.99");
-        gsap.defaults({ ease: "main", duration: 0.7 });
-      }
-    } catch (e) {
-      console.warn("CustomEase failed to load, falling back to default.", e);
-      gsap.defaults({ ease: "power2.out", duration: 0.7 });
-    }
+    const container = containerRef.current;
 
     const ctx = gsap.context(() => {
       // 1. Arrow Animation (safe check)
@@ -110,10 +101,8 @@ export function Component() {
 
     return () => {
       ctx.revert();
-      if (containerRef.current) {
-        const items = containerRef.current.querySelectorAll(".menu-list-item[data-shape]");
-        items.forEach((item) => item._cleanup && item._cleanup());
-      }
+      const items = container.querySelectorAll(".menu-list-item[data-shape]");
+      items.forEach((item) => item._cleanup && item._cleanup());
     };
   }, []);
 
@@ -258,7 +247,7 @@ export function Component() {
       </div>
 
       <section className="fullscreen-menu-container">
-        <div data-nav="closed" className="nav-overlay-wrapper">
+        <div data-nav="closed" className="nav-overlay-wrapper" aria-hidden={!isMenuOpen}>
           {/* Frosted click-to-close backdrop */}
           <div className="overlay" onClick={closeMenu}></div>
           <nav className="menu-content" aria-label="Fullscreen Navigation Menu">
@@ -271,10 +260,10 @@ export function Component() {
               <div className="ambient-background-shapes">
                 {/* Shape 1: Floating circles */}
                 <svg className="bg-shape bg-shape-1" viewBox="0 0 400 400" fill="none">
-                  <circle className="shape-element" cx="80" cy="120" r="40" fill="rgba(99,102,241,0.25)" />
-                  <circle className="shape-element" cx="300" cy="80" r="60" fill="rgba(139,92,246,0.2)" />
-                  <circle className="shape-element" cx="200" cy="300" r="80" fill="rgba(236,72,153,0.18)" />
-                  <circle className="shape-element" cx="350" cy="280" r="30" fill="rgba(99,102,241,0.25)" />
+                  <circle className="shape-element" cx="80" cy="120" r="40" fill="rgba(68,61,255,0.25)" />
+                  <circle className="shape-element" cx="300" cy="80" r="60" fill="rgba(221,219,255,0.2)" />
+                  <circle className="shape-element" cx="200" cy="300" r="80" fill="rgba(47,39,206,0.2)" />
+                  <circle className="shape-element" cx="350" cy="280" r="30" fill="rgba(68,61,255,0.25)" />
                 </svg>
 
                 {/* Shape 2: Wave pattern */}
@@ -282,14 +271,14 @@ export function Component() {
                   <path
                     className="shape-element"
                     d="M0 200 Q100 100, 200 200 T 400 200"
-                    stroke="rgba(99,102,241,0.3)"
+                    stroke="rgba(68,61,255,0.3)"
                     strokeWidth="60"
                     fill="none"
                   />
                   <path
                     className="shape-element"
                     d="M0 280 Q100 180, 200 280 T 400 280"
-                    stroke="rgba(139,92,246,0.22)"
+                    stroke="rgba(221,219,255,0.22)"
                     strokeWidth="40"
                     fill="none"
                   />
@@ -297,20 +286,20 @@ export function Component() {
 
                 {/* Shape 3: Grid dots */}
                 <svg className="bg-shape bg-shape-3" viewBox="0 0 400 400" fill="none">
-                  <circle className="shape-element" cx="50" cy="50" r="8" fill="rgba(99,102,241,0.4)" />
-                  <circle className="shape-element" cx="150" cy="50" r="8" fill="rgba(139,92,246,0.4)" />
-                  <circle className="shape-element" cx="250" cy="50" r="8" fill="rgba(236,72,153,0.4)" />
-                  <circle className="shape-element" cx="350" cy="50" r="8" fill="rgba(99,102,241,0.4)" />
-                  <circle className="shape-element" cx="100" cy="150" r="12" fill="rgba(139,92,246,0.35)" />
-                  <circle className="shape-element" cx="200" cy="150" r="12" fill="rgba(236,72,153,0.35)" />
-                  <circle className="shape-element" cx="300" cy="150" r="12" fill="rgba(99,102,241,0.35)" />
-                  <circle className="shape-element" cx="50" cy="250" r="10" fill="rgba(236,72,153,0.4)" />
-                  <circle className="shape-element" cx="150" cy="250" r="10" fill="rgba(99,102,241,0.4)" />
-                  <circle className="shape-element" cx="250" cy="250" r="10" fill="rgba(139,92,246,0.4)" />
-                  <circle className="shape-element" cx="350" cy="250" r="10" fill="rgba(236,72,153,0.4)" />
-                  <circle className="shape-element" cx="100" cy="350" r="6" fill="rgba(99,102,241,0.4)" />
-                  <circle className="shape-element" cx="200" cy="350" r="6" fill="rgba(139,92,246,0.4)" />
-                  <circle className="shape-element" cx="300" cy="350" r="6" fill="rgba(236,72,153,0.4)" />
+                  <circle className="shape-element" cx="50" cy="50" r="8" fill="rgba(68,61,255,0.4)" />
+                  <circle className="shape-element" cx="150" cy="50" r="8" fill="rgba(221,219,255,0.4)" />
+                  <circle className="shape-element" cx="250" cy="50" r="8" fill="rgba(47,39,206,0.4)" />
+                  <circle className="shape-element" cx="350" cy="50" r="8" fill="rgba(68,61,255,0.4)" />
+                  <circle className="shape-element" cx="100" cy="150" r="12" fill="rgba(221,219,255,0.35)" />
+                  <circle className="shape-element" cx="200" cy="150" r="12" fill="rgba(47,39,206,0.35)" />
+                  <circle className="shape-element" cx="300" cy="150" r="12" fill="rgba(68,61,255,0.35)" />
+                  <circle className="shape-element" cx="50" cy="250" r="10" fill="rgba(47,39,206,0.4)" />
+                  <circle className="shape-element" cx="150" cy="250" r="10" fill="rgba(68,61,255,0.4)" />
+                  <circle className="shape-element" cx="250" cy="250" r="10" fill="rgba(221,219,255,0.4)" />
+                  <circle className="shape-element" cx="350" cy="250" r="10" fill="rgba(47,39,206,0.4)" />
+                  <circle className="shape-element" cx="100" cy="350" r="6" fill="rgba(68,61,255,0.4)" />
+                  <circle className="shape-element" cx="200" cy="350" r="6" fill="rgba(221,219,255,0.4)" />
+                  <circle className="shape-element" cx="300" cy="350" r="6" fill="rgba(47,39,206,0.4)" />
                 </svg>
 
                 {/* Shape 4: Organic blobs */}
@@ -318,20 +307,20 @@ export function Component() {
                   <path
                     className="shape-element"
                     d="M100 100 Q150 50, 200 100 Q250 150, 200 200 Q150 250, 100 200 Q50 150, 100 100"
-                    fill="rgba(99,102,241,0.22)"
+                    fill="rgba(68,61,255,0.22)"
                   />
                   <path
                     className="shape-element"
                     d="M250 200 Q300 150, 350 200 Q400 250, 350 300 Q400 250, 350 300 Q300 350, 250 300 Q200 250, 250 200"
-                    fill="rgba(236,72,153,0.18)"
+                    fill="rgba(47,39,206,0.18)"
                   />
                 </svg>
 
                 {/* Shape 5: Diagonal lines */}
                 <svg className="bg-shape bg-shape-5" viewBox="0 0 400 400" fill="none">
-                  <line className="shape-element" x1="0" y1="100" x2="300" y2="400" stroke="rgba(99,102,241,0.25)" strokeWidth="30" />
-                  <line className="shape-element" x1="100" y1="0" x2="400" y2="300" stroke="rgba(139,92,246,0.2)" strokeWidth="25" />
-                  <line className="shape-element" x1="200" y1="0" x2="400" y2="200" stroke="rgba(236,72,153,0.18)" strokeWidth="20" />
+                  <line className="shape-element" x1="0" y1="100" x2="300" y2="400" stroke="rgba(68,61,255,0.25)" strokeWidth="30" />
+                  <line className="shape-element" x1="100" y1="0" x2="400" y2="300" stroke="rgba(221,219,255,0.2)" strokeWidth="25" />
+                  <line className="shape-element" x1="200" y1="0" x2="400" y2="200" stroke="rgba(47,39,206,0.18)" strokeWidth="20" />
                 </svg>
               </div>
             </div>
