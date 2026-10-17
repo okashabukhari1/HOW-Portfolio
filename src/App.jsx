@@ -11,6 +11,7 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
 import ContactPage from './pages/ContactPage';
+import PlansPage from './pages/PlansPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import './App.css';
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/work" element={<WorkPage />} />
             <Route path="/work/:projectId" element={<ProjectDetailPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/plans" element={<PlansPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />

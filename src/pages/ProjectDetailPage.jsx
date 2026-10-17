@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Check, ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/studioData';
 import './ProjectDetailPage.css';
 
@@ -23,6 +23,7 @@ export default function ProjectDetailPage() {
               <div className="project-detail-techs">
                 {project.technology.map((tech) => <span key={tech}>{tech}</span>)}
               </div>
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-live-link">Visit live project <ExternalLink size={16} /></a>
             </div>
             <div className="project-detail-image-wrap">
               <img src={project.heroImage} alt={`${project.title} project preview`} />

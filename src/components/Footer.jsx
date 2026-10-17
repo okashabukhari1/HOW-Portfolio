@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { GithubIcon, LinkedinIcon, WhatsappIcon, EmailIcon } from "./SocialIcons";
+import { WhatsappIcon } from "./SocialIcons";
 import { cn } from "../utils/cn";
 import "./Footer.css";
 
@@ -183,6 +183,7 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li><Link to="/work">Selected Work</Link></li>
               <li><Link to="/services">Services &amp; Capabilities</Link></li>
+              <li><Link to="/plans">Plans</Link></li>
               <li><Link to="/about">Studio Philosophy</Link></li>
               <li><Link to="/team">Founders &amp; Team</Link></li>
               <li><Link to="/contact">Contact &amp; RFPs</Link></li>
@@ -241,20 +242,6 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="footer-social-tray">
-              <a href="https://github.com/okashabukhari1" target="_blank" rel="noopener noreferrer" className="footer-soc-link" aria-label="GitHub">
-                <GithubIcon size={18} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footer-soc-link" aria-label="LinkedIn">
-                <LinkedinIcon size={18} />
-              </a>
-              <a href="mailto:contact@howstudio.dev" className="footer-soc-link" aria-label="Email Studio">
-                <EmailIcon size={18} />
-              </a>
-              <a href="https://wa.me/923272707981" target="_blank" rel="noopener noreferrer" className="footer-soc-link footer-soc-link--wa" aria-label="WhatsApp">
-                <WhatsappIcon size={18} />
-              </a>
-            </div>
           </div>
         </div>
 

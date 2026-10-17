@@ -1,0 +1,22 @@
+.plans-section { padding: clamp(72px, 9vw, 120px) 0; background: #fbfbfe; }
+.plans-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 34px; color: #565371; font-size: 15px; }
+.plans-intro p { margin: 0; }
+.plans-discuss-link { display: inline-flex; align-items: center; gap: 8px; color: #2f27ce; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.plans-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.plan-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 32px; background: #fff; border: 1px solid rgba(47, 39, 206, .15); border-radius: 24px; box-shadow: 0 14px 38px rgba(47, 39, 206, .07); }
+.plan-card--recommended { border: 2px solid #2f27ce; box-shadow: 0 22px 54px rgba(47, 39, 206, .16); }
+.plan-recommended { position: absolute; top: -13px; right: 24px; padding: 6px 11px; border-radius: 999px; background: #2f27ce; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.plan-number { color: #2f27ce; font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.plan-card h2 { margin: 13px 0 10px; color: #040316; font-size: 30px; letter-spacing: -.04em; }
+.plan-audience { min-height: 68px; margin: 0; color: #565371; font-size: 14px; line-height: 1.55; }
+.plan-quote { margin: 28px 0 22px; color: #040316; font-size: 18px; font-weight: 750; }
+.plan-card ul { display: grid; gap: 12px; margin: 0 0 30px; padding: 0; list-style: none; }
+.plan-card li { display: flex; align-items: flex-start; gap: 9px; color: #403d63; font-size: 13px; line-height: 1.45; }
+.plan-card li svg { flex: 0 0 auto; margin-top: 1px; color: #2f27ce; }
+.plan-select-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; min-height: 46px; padding: 12px 16px; border: 1px solid #2f27ce; border-radius: 999px; color: #2f27ce; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.plan-card--recommended .plan-select-button, .plan-select-button:hover { background: #2f27ce; color: #fff; }
+.plan-select-button:hover { transform: translateY(-2px); }
+.plans-disclaimer { max-width: 800px; margin: 28px auto 0; color: #76728f; font-size: 12px; line-height: 1.55; text-align: center; }
+@media (max-width: 1100px) { .plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; margin: 0 auto; } .plan-audience { min-height: auto; } }
+@media (max-width: 650px) { .plans-grid { grid-template-columns: 1fr; max-width: 620px; } }
+@media (max-width: 600px) { .plans-intro { align-items: flex-start; flex-direction: column; } .plan-card { padding: 28px 22px; } }

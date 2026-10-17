@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Globe, ShoppingBag, Palette, Cpu, Gauge, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Layers, Globe, ShoppingBag, Palette, Cpu, Gauge } from 'lucide-react';
 import { servicesData } from '../data/studioData';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
 import './Services.css';
@@ -11,11 +11,10 @@ const serviceIcons = [
   <ShoppingBag size={22} />,
   <Palette size={22} />,
   <Cpu size={22} />,
-  <Gauge size={22} />,
-  <ShieldCheck size={22} />
+  <Gauge size={22} />
 ];
 
-export default function Services({ limit }) {
+export default function Services({ limit, showPlansCta = false }) {
   const sectionRef = useRef(null);
   useScrollAnimation(sectionRef);
 
@@ -50,13 +49,6 @@ export default function Services({ limit }) {
               <h3 className="service-title">{svc.title}</h3>
               <p className="service-description">{svc.desc}</p>
 
-              {svc.price && (
-                <div className="service-price-row">
-                  <strong>{svc.price}</strong>
-                  <span>{svc.priceNote}</span>
-                </div>
-              )}
-
               <div className="service-tag-cloud">
                 {svc.tags.map((tag) => (
                   <span key={tag} className="service-chip">{tag}</span>
@@ -72,6 +64,16 @@ export default function Services({ limit }) {
             </div>
           ))}
         </div>
+
+        {showPlansCta && (
+          <div className="services-plans-cta reveal-up">
+            <div>
+              <span className="studio-eyebrow">Not sure what you need?</span>
+              <p>Tell us about your goals, and we'll help you identify the right solution.</p>
+            </div>
+            <Link to="/plans" className="services-plans-button">Explore our plans <ArrowUpRight size={16} /></Link>
+          </div>
+        )}
 
       </div>
     </section>

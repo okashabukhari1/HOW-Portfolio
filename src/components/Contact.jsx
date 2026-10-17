@@ -1,11 +1,30 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { MessageCircle, ArrowUpRight } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
 import './Contact.css';
 
 export default function Contact() {
   const sectionRef = useRef(null);
+  const [searchParams] = useSearchParams();
+  const initialPlan = ['starter', 'professional', 'custom', 'cyber-test'].includes(searchParams.get('plan')) ? searchParams.get('plan') : '';
+  const [form, setForm] = useState({ fullName: '', email: '', company: '', plan: initialPlan, projectType: '', budget: '', description: '' });
+  const [submitted, setSubmitted] = useState(false);
   useScrollAnimation(sectionRef);
+
+  const updateField = (event) => {
+    setSubmitted(false);
+    setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+  };
+
+  const submitInquiry = (event) => {
+    event.preventDefault();
+    if (!event.currentTarget.checkValidity()) {
+      event.currentTarget.reportValidity();
+      return;
+    }
+    setSubmitted(true);
+  };
 
   return (
     <section className="studio-contact-section" id="contact" ref={sectionRef}>
@@ -87,6 +106,26 @@ export default function Contact() {
               </a>
             </div>
           </div>
+
+          <form className="project-inquiry-form reveal-stagger-item" onSubmit={submitInquiry} noValidate>
+            <div className="inquiry-form-head">
+              <span className="studio-eyebrow">Project inquiry</span>
+              <h2>Tell us about your project</h2>
+              <p>Share the essentials below. This form prepares your inquiry; it is not delivered until you send it through WhatsApp.</p>
+            </div>
+
+            <div className="inquiry-fields">
+              <label>Full Name<input name="fullName" value={form.fullName} onChange={updateField} required autoComplete="name" /></label>
+              <label>Email Address<input type="email" name="email" value={form.email} onChange={updateField} required autoComplete="email" /></label>
+              <label>Company or Business Name <span>(optional)</span><input name="company" value={form.company} onChange={updateField} autoComplete="organization" /></label>
+              <label>Selected Plan<select name="plan" value={form.plan} onChange={updateField} required><option value="">Select a plan</option><option value="starter">Starter</option><option value="professional">Professional</option><option value="custom">Custom Solution</option><option value="cyber-test">Website Cyber Test</option></select></label>
+              <label>Project Type<select name="projectType" value={form.projectType} onChange={updateField} required><option value="">Select project type</option><option>Website</option><option>Web application</option><option>E-commerce</option><option>UI/UX design</option><option>Custom software</option><option>Website optimization</option></select></label>
+              <label>Estimated Budget <span>(optional)</span><input name="budget" value={form.budget} onChange={updateField} placeholder="Your preferred range" /></label>
+              <label className="inquiry-field-full">Project Description<textarea name="description" value={form.description} onChange={updateField} required rows="5" placeholder="Goals, scope, pages, features, or anything helpful" /></label>
+            </div>
+            <button type="submit" className="inquiry-submit">Send project inquiry <ArrowUpRight size={16} /></button>
+            {submitted && <div className="inquiry-success" role="status">Your inquiry is prepared but has not been delivered. Send it through <a href="https://wa.me/923272707981" target="_blank" rel="noopener noreferrer">WhatsApp</a> to start the conversation.</div>}
+          </form>
 
         </div>
 

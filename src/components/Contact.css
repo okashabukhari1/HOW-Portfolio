@@ -17,8 +17,9 @@
 
 .contact-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  width: min(100%, 860px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 24px;
   margin: 0 auto;
 }
 
@@ -155,7 +156,24 @@
   color: #ffffff;
 }
 
+.project-inquiry-form { padding: clamp(28px, 4vw, 42px); border: 1px solid rgba(47, 39, 206, .16); border-radius: 24px; background: #fff; box-shadow: 0 12px 36px rgba(47, 39, 206, .07); }
+.inquiry-form-head h2 { margin: 10px 0 9px; color: #040316; font-size: 28px; letter-spacing: -.04em; }
+.inquiry-form-head p { margin: 0 0 24px; color: #565371; font-size: 14px; line-height: 1.55; }
+.inquiry-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.inquiry-fields label { display: grid; gap: 7px; color: #24213f; font-size: 12px; font-weight: 750; }
+.inquiry-fields label span { color: #77738e; font-weight: 500; }
+.inquiry-fields input, .inquiry-fields select, .inquiry-fields textarea { width: 100%; padding: 11px 12px; border: 1px solid rgba(47, 39, 206, .18); border-radius: 10px; background: #fbfbfe; color: #040316; font: inherit; font-size: 14px; font-weight: 500; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.inquiry-fields textarea { resize: vertical; }
+.inquiry-fields input:focus, .inquiry-fields select:focus, .inquiry-fields textarea:focus { border-color: #2f27ce; box-shadow: 0 0 0 3px rgba(47, 39, 206, .12); }
+.inquiry-field-full { grid-column: 1 / -1; }
+.inquiry-submit { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 12px 17px; border: 0; border-radius: 999px; background: #2f27ce; color: #fff; cursor: pointer; font: inherit; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; transition: background .2s ease, transform .2s ease; }
+.inquiry-submit:hover { background: #443dff; transform: translateY(-2px); }
+.inquiry-success { margin-top: 18px; padding: 13px 14px; border: 1px solid rgba(47, 39, 206, .17); border-radius: 10px; background: #f2f1ff; color: #403d63; font-size: 13px; line-height: 1.5; }
+.inquiry-success a { color: #2f27ce; font-weight: 800; }
+
 @media (max-width: 640px) {
+  .contact-cards-grid, .inquiry-fields { grid-template-columns: 1fr; }
+  .inquiry-field-full { grid-column: auto; }
   .founder-whatsapp-item { align-items: flex-start; flex-direction: column; gap: 10px; }
   .founder-action-badge { justify-content: space-between; width: 100%; }
 }

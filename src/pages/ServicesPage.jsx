@@ -15,7 +15,7 @@ export default function ServicesPage() {
         note="Strategy, design and engineering — connected from day one."
       />
 
-      <Services />
+      <Services showPlansCta />
       <Process />
       <TechMarquee />
     </div>

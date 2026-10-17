@@ -128,21 +128,6 @@
   flex-grow: 1;
 }
 
-.service-price-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
-  margin: -6px 0 22px;
-  padding: 13px 14px;
-  background: #040316;
-  border-radius: 12px;
-  color: #fbfbfe;
-}
-
-.service-price-row strong { font-size: 15px; letter-spacing: -0.02em; }
-.service-price-row span { color: #dddbff; font-size: 10px; line-height: 1.3; text-align: right; }
-
 .service-tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -180,6 +165,11 @@
   gap: 12px;
 }
 
+.services-plans-cta { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 48px; padding: 30px; border-radius: 20px; background: #040316; color: #fff; }
+.services-plans-cta .studio-eyebrow { color: #dddbff; }
+.services-plans-cta p { max-width: 570px; margin: 8px 0 0; color: rgba(251, 251, 254, .78); font-size: 16px; line-height: 1.55; }
+.services-plans-button { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; padding: 13px 17px; border-radius: 999px; background: #fff; color: #2f27ce; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
+
 @media (max-width: 1024px) {
   .services-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -190,4 +180,5 @@
   .services-cards-grid {
     grid-template-columns: 1fr;
   }
+  .services-plans-cta { align-items: flex-start; flex-direction: column; padding: 26px 22px; }
 }

@@ -328,8 +328,8 @@ export function Component() {
             <div className="menu-content-wrapper">
               <ul className="menu-list">
                 <li className="menu-list-item" data-shape="1">
-                  <Link to="/about" className="nav-link w-inline-block" onClick={closeMenu}>
-                    <p className="nav-link-text">About us</p>
+                  <Link to="/" className="nav-link w-inline-block" onClick={closeMenu}>
+                    <p className="nav-link-text">Home</p>
                     <div className="nav-link-hover-bg"></div>
                   </Link>
                 </li>
@@ -341,7 +341,19 @@ export function Component() {
                 </li>
                 <li className="menu-list-item" data-shape="2">
                   <Link to="/work" className="nav-link w-inline-block" onClick={closeMenu}>
-                    <p className="nav-link-text">Our work</p>
+                    <p className="nav-link-text">Work</p>
+                    <div className="nav-link-hover-bg"></div>
+                  </Link>
+                </li>
+                <li className="menu-list-item" data-shape="4">
+                  <Link to="/plans" className="nav-link w-inline-block" onClick={closeMenu}>
+                    <p className="nav-link-text">Plans</p>
+                    <div className="nav-link-hover-bg"></div>
+                  </Link>
+                </li>
+                <li className="menu-list-item" data-shape="1">
+                  <Link to="/about" className="nav-link w-inline-block" onClick={closeMenu}>
+                    <p className="nav-link-text">About</p>
                     <div className="nav-link-hover-bg"></div>
                   </Link>
                 </li>
@@ -353,7 +365,7 @@ export function Component() {
                 </li>
                 <li className="menu-list-item" data-shape="5">
                   <Link to="/contact" className="nav-link w-inline-block" onClick={closeMenu}>
-                    <p className="nav-link-text">Contact us</p>
+                    <p className="nav-link-text">Contact</p>
                     <div className="nav-link-hover-bg"></div>
                   </Link>
                 </li>

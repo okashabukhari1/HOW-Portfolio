@@ -17,8 +17,6 @@ const showcaseProjects = [
   projectsData.furevercare,
   projectsData['travel-smart'],
   projectsData['picnic-games'],
-  projectsData['veloce-mobility'],
-  projectsData['nexus-fintech'],
 ];
 
 export default function HomePage() {
@@ -64,11 +62,10 @@ export default function HomePage() {
         </div>
 
         <div className="expand-cards-body home-featured-grid projects-showcase-grid reveal-stagger-group">
-          {showcaseProjects.map((project, index) => (
+          {showcaseProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              className={index === 0 ? 'project-showcase-card--lead' : ''}
             />
           ))}
         </div>
@@ -76,10 +73,10 @@ export default function HomePage() {
         {/* Bottom Explorer Action Bar */}
         <div className="expand-cards-footer-bar">
           <span style={{ fontSize: '13px', color: '#565371' }}>
-            Five selected builds • Full case studies included
+            Three selected builds • Full case studies included
           </span>
           <Link to="/work" className="expand-explore-link">
-            <span>Explore All 8+ Works</span>
+            <span>Explore all work</span>
             <ArrowRight size={14} />
           </Link>
         </div>

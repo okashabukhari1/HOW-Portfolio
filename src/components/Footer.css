@@ -231,41 +231,6 @@
   color: rgba(251, 251, 254, 0.58);
 }
 
-.footer-soc-link--wa {
-  color: #25d366;
-  border-color: rgba(37, 211, 102, 0.25);
-}
-
-.footer-soc-link--wa:hover {
-  background: #25d366;
-  color: #0a1a0d;
-}
-
-.footer-social-tray {
-  display: flex;
-  gap: 10px;
-}
-
-.footer-soc-link {
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: #dddbff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.footer-soc-link:hover {
-  background: #443dff;
-  color: #fbfbfe;
-  transform: translateY(-2px);
-}
-
 /* ==========================================================================
    Large Prominent TextHoverEffect styling for H.O.W.
    ========================================================================== */

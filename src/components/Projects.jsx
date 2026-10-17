@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/studioData';
 import { useScrollAnimation } from '../hooks/useScrollTrigger';
 import './Projects.css';
@@ -24,22 +24,24 @@ export function ProjectCard({ project, className = '' }) {
           </div>
           <span className="project-open-cue" aria-hidden="true"><ArrowUpRight size={20} /></span>
         </div>
-
-        <div className="project-card-body">
-          <span className="project-category-tag">{project.category}</span>
-          <h3 className="project-headline-title">{project.title}</h3>
-          <p className="project-summary-copy">{project.tagline}</p>
-
-          <div className="project-card-bottom">
-            <div className="project-chips-row" aria-label="Technologies used">
-              {project.technology.slice(0, 3).map((tech) => (
-                <span key={tech} className="tech-badge-chip">{tech}</span>
-              ))}
-            </div>
-            <span className="btn-case-study">View case study <ArrowUpRight size={15} /></span>
-          </div>
-        </div>
       </Link>
+
+      <div className="project-card-body">
+        <span className="project-category-tag">{project.category}</span>
+        <h3 className="project-headline-title">{project.title}</h3>
+        <p className="project-summary-copy">{project.tagline}</p>
+
+        <div className="project-chips-row" aria-label="Technologies used">
+          {project.technology.slice(0, 3).map((tech) => (
+            <span key={tech} className="tech-badge-chip">{tech}</span>
+          ))}
+        </div>
+
+        <div className="project-card-bottom">
+          <Link className="btn-case-study" to={`/work/${project.id}`}>View case study <ArrowUpRight size={15} /></Link>
+          <a className="btn-live-project" href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live project <ExternalLink size={14} /></a>
+        </div>
+      </div>
     </article>
   );
 }
